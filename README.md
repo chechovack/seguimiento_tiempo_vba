@@ -10,7 +10,6 @@ Herramienta creada en Excel con macros en VBA para registrar, organizar y visual
 - ✅ Formulario VBA para registrar tareas de forma rápida e intuitiva
 - 📅 Diagrama de Gantt automatizado con fechas dinámicas
 - 👥 Asignación de responsables, duración y estado de las tareas
-- 📈 Panel de métricas clave por equipo o periodo
 - 💾 Actualización y almacenamiento automatizado con macros
 
 ---
@@ -21,7 +20,7 @@ Herramienta creada en Excel con macros en VBA para registrar, organizar y visual
 |-------------|-------------|
 | Excel       | Interfaz y almacenamiento de datos |
 | VBA         | Automatización de tareas, formularios, lógica de negocio |
-| PowerQuery (opcional) | Limpieza de datos si se integra a otros dashboards |
+| PowerQuery  | Integración del Formulario con las demás Hojas |
 
 ---
 
