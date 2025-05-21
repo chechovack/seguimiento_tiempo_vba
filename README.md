@@ -66,4 +66,4 @@ seguimiento-tiempo-vba/
 
 👨‍💻 Sergio Martínez  
 *Data Scientist | Machine Learning | Automatization*  
-📫 smartinezx99@gmail.com | [LinkedIn](https://linkedin.com/in/tu-perfil](https://www.linkedin.com/in/sergio-mart%C3%ADnez-b26301176/))
+📫 smartinezx99@gmail.com | [LinkedIn](https://linkedin.com/in/tu-perfil](https://www.linkedin.com/in/sergio-mart%C3%ADnez-b26301176/)
