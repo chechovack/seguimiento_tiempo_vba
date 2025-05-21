@@ -1,0 +1,150 @@
+' Archivo: VBA Automatización Tareas
+' Descripción: Este módulo contiene funciones para trabajar con la macro del proyecto. 
+' Autor: Sergio Martinez
+
+Option Explicit
+
+' Funcion que Copia la info registrada en la hoja 'Formulario' y la pega en la hoja 'Base_Nueva'
+Sub CopyData1()
+
+    Dim tbl As ListObject
+    Dim LastRow As Long
+    
+    ' Definir la tabla
+    Set tbl = Sheets("Base_Nueva").ListObjects("Tabla15")
+    
+    ' Obtener la última fila de la tabla
+    LastRow = tbl.ListRows.Count + 1
+    
+    ' Agregar una nueva fila a la tabla
+    tbl.ListRows.Add
+
+    ' Copiar y pegar las demás celdas
+    With Sheets("Formulario")
+        .Range("D7").Copy Destination:=tbl.Range(LastRow + 1, "B")
+        '.Range("D7").Copy
+   ' tbl.ListColumns("B").DataBodyRange.Cells(LastRow + 1).PasteSpecial Paste:=xlPasteValues
+        
+        .Range("H7").Copy Destination:=tbl.Range(LastRow + 1, "C")
+        .Range("D11").Copy Destination:=tbl.Range(LastRow + 1, "D")
+        .Range("D15").Copy Destination:=tbl.Range(LastRow + 1, "E")
+        .Range("H15").Copy Destination:=tbl.Range(LastRow + 1, "F")
+        .Range("H11").Copy Destination:=tbl.Range(LastRow + 1, "G")
+        .Range("D19").Copy Destination:=tbl.Range(LastRow + 1, "H")
+    End With
+    
+    ' Limpiar el portapapeles
+    Application.CutCopyMode = False
+
+    
+End Sub
+
+
+' Funcion qque borrt todo el contenido del formulario'
+Sub Limpiar_Macro()
+'
+' Limpiar_Macro Macro
+'
+
+    Sheets("Formulario").Select
+    Range("D7").Select
+    Selection.ClearContents
+    Range("H7").Select
+    Selection.ClearContents
+    Range("D11").Select
+    Selection.ClearContents
+    Range("H11").Select
+    Selection.ClearContents
+    Range("D15").Select
+    Selection.ClearContents
+    Range("H15").Select
+    Selection.ClearContents
+    Range("D19:H23").Select
+    Selection.ClearContents
+    
+End Sub
+
+' Funcion que confirma al usuario si quiere guardar lo escrito en el Formulario'
+Sub Guardar()
+
+ Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("¿Quieres guardar los datos?", vbYesNo + vbInformation, "Confirmar")
+    If msgValue = vbNo Then Exit Sub
+    
+    Call CopyData1
+    Call Limpiar_Macro
+    
+    End Sub
+    
+
+' Funcion que confirma al usuario si quiere limpair la hoja del Formulario'
+Sub Limpiar()
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("¿Quieres limpiar los datos?", vbYesNo + vbInformation, "Confirmar")
+    If msgValue = vbNo Then Exit Sub
+    
+   Call Limpiar_Macro
+End Sub
+
+' Mensaje Text BOX'
+Sub Msg_Fecha1()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es la fecha en la cual se realiza la solicitud respectiva, es decir, hoy.")
+    Exit Sub
+
+End Sub
+
+' Mensaje Text BOX'
+Sub Msg_Persona()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es quien realiza este formulario, es decir, usted.")
+    Exit Sub
+
+End Sub
+
+' Mensaje Text BOX'
+Sub Msg_Fecha2()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es la fecha en la que se espera recibir el entregable. Debe ser mayor a la FECHA DISPONIBLE DEL ANALISTA que se muestra en la celda H12.")
+    Exit Sub
+
+End Sub
+
+
+' Mensaje Text BOX'
+Sub Msg_Fecha3()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es la siguiente fecha en la que el analista se encuentra disponible de acuerdo a las solicitudes que ya se le han realizado. Para ver las solicitudes que actualmente tiene su analista diríjase a la Pestaña 'Uso de Tiempo'.")
+    Exit Sub
+
+End Sub
+
+
+' Mensaje Text BOX'
+Sub Msg_Entregable()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es la característica principal del requerimiento.")
+
+End Sub
+
+' Mensaje Text BOX'
+Sub Msg_Objetivo()
+
+Dim msgValue As VbMsgBoxResult
+    
+    msgValue = MsgBox("Es lo que se espera recibir del entregable, es decir, aquellos criterios de aceptación. POR FAVOR SEA MUY ESPECÍFICO CON LA HISTORIA QUE QUIERE CONTAR")
+
+End Sub
+
