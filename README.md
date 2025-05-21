@@ -1,5 +1,8 @@
 # 📊 Seguimiento de Tiempo Automatizado en Excel + VBA
 
+**Año:**  
+2023
+
 **Descripción:**  
 Herramienta creada en Excel con macros en VBA para registrar, organizar y visualizar el seguimiento de tareas mediante un formulario dinámico y un diagrama de Gantt actualizado automáticamente.
 
