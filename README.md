@@ -54,8 +54,9 @@ seguimiento-tiempo-vba/
 ├── README.md
 ├── SeguimientoTiempos.xlsm
 ├── Capturas/
-│ ├── formulario.png
-│ ├── gantt.png
+│ ├── Formulario.png
+│ ├── Formulario_Boton.png
+│ ├── Diagrama_Gantt.png
 ├── VBA/
 │ └── Codigo_VBAExcel.txt
 
